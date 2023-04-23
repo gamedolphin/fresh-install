@@ -46,12 +46,14 @@ NORDIC_THEME_DIR=~/.themes/Nordic
 if [ ! -d "$NORDIC_THEME_DIR" ];
 then
     git clone --depth 1 https://github.com/EliverLara/Nordic.git ~/.themes/Nordic
+    sudo cp -r ~/.themes/Nordic/  /usr/share/themes/Nordic
     git clone https://github.com/EliverLara/firefox-nordic-theme && cd firefox-nordic-theme
     ./scripts/install.sh
     cd ..
     git clone https://github.com/alvatip/Nordzy-icon
     cd Nordzy-icon
     ./install.sh
+    cd ..
 fi
 
 mkdir -p ~/.config/alacritty
