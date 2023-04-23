@@ -10,7 +10,7 @@ sudo dnf install \
 
 sudo dnf update -y
 
-sudo dnf install git @development-tools autoconf gtk3-devel gnutls-devel   libtiff-devel giflib-devel libjpeg-devel libpng-devel libXpm-devel   ncurses-devel texinfo   libxml2-devel   jansson jansson-devel libwebp-devel sqlite-devel ImageMagick librsvg2-devel lcms2-devel gpm-devel GConf2-devel m17n-lib-devel libotf-devel libXft-devel libtree-sitter-devel rofi picom akmod-nvidia xorg-11-drv-nvidia-cuda curl polybar zsh alacritty feh lxappearance nautilus
+sudo dnf install git @development-tools autoconf gtk3-devel gnutls-devel   libtiff-devel giflib-devel libjpeg-devel libpng-devel libXpm-devel   ncurses-devel texinfo   libxml2-devel   jansson jansson-devel libwebp-devel sqlite-devel ImageMagick librsvg2-devel lcms2-devel gpm-devel GConf2-devel m17n-lib-devel libotf-devel libXft-devel libtree-sitter-devel rofi picom akmod-nvidia xorg-11-drv-nvidia-cuda curl polybar zsh alacritty feh lxappearance nautilus openssl openssl-libs GConf2 openssl1.1
 
 sudo dnf group upgrade --with-optional Multimedia --allowerasing
 
@@ -88,3 +88,8 @@ then
     sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz
     echo -n 'export PATH=$PATH:/usr/local/go/bin' >> ~/.zshenv
 fi
+
+# install unity-hub
+
+sudo sh -c 'echo -e "[unityhub]\nname=Unity Hub\nbaseurl=https://hub.unity3d.com/linux/repos/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://hub.unity3d.com/linux/repos/rpm/stable/repodata/repomd.xml.key\nrepo_gpgcheck=1" > /etc/yum.repos.d/unityhub.repo'
+sudo dnf update && sudo dnf install -y unityhub
