@@ -10,7 +10,7 @@ sudo dnf install \
 
 sudo dnf update -y
 
-sudo dnf install git @development-tools autoconf gtk3-devel gnutls-devel   libtiff-devel giflib-devel libjpeg-devel libpng-devel libXpm-devel   ncurses-devel texinfo   libxml2-devel   jansson jansson-devel libwebp-devel sqlite-devel ImageMagick librsvg2-devel lcms2-devel gpm-devel GConf2-devel m17n-lib-devel libotf-devel libXft-devel libtree-sitter-devel rofi picom akmod-nvidia xorg-11-drv-nvidia-cuda curl polybar zsh alacritty feh lxappearance nautilus openssl openssl-libs GConf2 openssl1.1
+sudo dnf install git @development-tools autoconf gtk3-devel gnutls-devel   libtiff-devel giflib-devel libjpeg-devel libpng-devel libXpm-devel   ncurses-devel texinfo   libxml2-devel   jansson jansson-devel libwebp-devel sqlite-devel ImageMagick librsvg2-devel lcms2-devel gpm-devel GConf2-devel m17n-lib-devel libotf-devel libXft-devel libtree-sitter-devel rofi picom akmod-nvidia xorg-11-drv-nvidia-cuda curl polybar zsh alacritty feh lxappearance nautilus openssl openssl-libs GConf2 openssl1.1 blueman
 
 sudo dnf group upgrade --with-optional Multimedia --allowerasing
 
@@ -93,3 +93,11 @@ fi
 
 sudo sh -c 'echo -e "[unityhub]\nname=Unity Hub\nbaseurl=https://hub.unity3d.com/linux/repos/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://hub.unity3d.com/linux/repos/rpm/stable/repodata/repomd.xml.key\nrepo_gpgcheck=1" > /etc/yum.repos.d/unityhub.repo'
 sudo dnf update && sudo dnf install -y unityhub
+
+
+# install slack
+if ! command -v slack &> /dev/null
+then
+    wget https://downloads.slack-edge.com/releases/linux/4.31.155/prod/x64/slack-4.31.155-0.1.el8.x86_64.rpm
+    sudo yum -y install ./slack-4.31.155-0.1.el8.x86_64.rpm
+fi
