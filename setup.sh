@@ -101,3 +101,10 @@ then
     wget https://downloads.slack-edge.com/releases/linux/4.31.155/prod/x64/slack-4.31.155-0.1.el8.x86_64.rpm
     sudo yum -y install ./slack-4.31.155-0.1.el8.x86_64.rpm
 fi
+
+# install zoom
+if ! command -v zoom &> /dev/null
+then
+    wget https://zoom.us/client/latest/zoom_x86_64.rpm
+    sudo dnf localinstall zoom_x86_64.rpm
+fi
