@@ -80,6 +80,9 @@ sudo lchsh $USER
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+## install nextest for rust
+curl -LsSf https://get.nexte.st/latest/linux | tar zxf - -C ${CARGO_HOME:-~/.cargo}/bin
+
 # install golang
 
 if ! command -v go &> /dev/null

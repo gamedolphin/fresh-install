@@ -220,7 +220,8 @@ client.background       #FFFFFF
 
 gaps inner 5px
 gaps outer 2px
-smart_gaps inverse_outer
+gaps top 40px
+smart_gaps off
 
 default_border pixel 0
 default_floating_border pixel 0
