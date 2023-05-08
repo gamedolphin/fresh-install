@@ -10,7 +10,7 @@ sudo dnf install \
 
 sudo dnf update -y
 
-sudo dnf install git @development-tools autoconf gtk3-devel gnutls-devel   libtiff-devel giflib-devel libjpeg-devel libpng-devel libXpm-devel   ncurses-devel texinfo   libxml2-devel   jansson jansson-devel libwebp-devel sqlite-devel ImageMagick librsvg2-devel lcms2-devel gpm-devel GConf2-devel m17n-lib-devel libotf-devel libXft-devel libtree-sitter-devel rofi picom akmod-nvidia xorg-11-drv-nvidia-cuda curl polybar zsh alacritty feh lxappearance nautilus openssl openssl-libs GConf2 openssl1.1 blueman
+sudo dnf install git @development-tools autoconf gtk3-devel gnutls-devel   libtiff-devel giflib-devel libjpeg-devel libpng-devel libXpm-devel   ncurses-devel texinfo   libxml2-devel   jansson jansson-devel libwebp-devel sqlite-devel ImageMagick librsvg2-devel lcms2-devel gpm-devel GConf2-devel m17n-lib-devel libotf-devel libXft-devel libtree-sitter-devel rofi picom akmod-nvidia xorg-11-drv-nvidia-cuda curl polybar zsh alacritty feh lxappearance nautilus openssl openssl-libs GConf2 openssl1.1 blueman arandr
 
 sudo dnf group upgrade --with-optional Multimedia --allowerasing
 
