@@ -90,12 +90,24 @@ then
     wget https://go.dev/dl/go1.20.3.linux-amd64.tar.gz
     sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz
     echo -n 'export PATH=$PATH:/usr/local/go/bin' >> ~/.zshenv
+    echo -n 'export PATH=$PATH:/home/nambiar/go/bin' >> ~/.zshenv
+    curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
 fi
 
 # install unity-hub
 
 sudo sh -c 'echo -e "[unityhub]\nname=Unity Hub\nbaseurl=https://hub.unity3d.com/linux/repos/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://hub.unity3d.com/linux/repos/rpm/stable/repodata/repomd.xml.key\nrepo_gpgcheck=1" > /etc/yum.repos.d/unityhub.repo'
 sudo dnf update && sudo dnf install -y unityhub
+
+# install node with nvm
+if ! command -v nvm &> /dev/null
+then
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+    source ~/.zshrc
+    nvm install --lts
+    curl -fsSL https://get.pnpm.io/install.sh | sh -
+fi
+
 
 
 # install slack
